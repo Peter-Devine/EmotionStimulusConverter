@@ -13,7 +13,7 @@ INPUT_PATH = args.input
 OUTPUT_PATH = args.output
 
 def create_emo_stim_df(filename):
-    f = open(INPUT_PATH + filename, "r")
+    f = open(INPUT_PATH +"/"+ filename, "r")
 
     fl =f.readlines()
 
