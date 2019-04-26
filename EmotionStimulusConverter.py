@@ -52,6 +52,10 @@ emo_stim_train = emo_stim.loc[train_indices,:]
 emo_stim_dev = emo_stim.loc[dev_indices,:]
 emo_stim_test = emo_stim.loc[test_indices,:]
 
+# Make the output directory if it does not currently exist
+if not os.path.exists(OUTPUT_PATH):
+    os.mkdir(OUTPUT_PATH)
+
 emo_stim_train.reset_index(drop=True).to_csv(OUTPUT_PATH+"/train.tsv", sep='\t', encoding="utf-8")
 emo_stim_dev.reset_index(drop=True).to_csv(OUTPUT_PATH+"/dev.tsv", sep='\t', encoding="utf-8")
 emo_stim_test.reset_index(drop=True).to_csv(OUTPUT_PATH+"/test.tsv", sep='\t', encoding="utf-8")
