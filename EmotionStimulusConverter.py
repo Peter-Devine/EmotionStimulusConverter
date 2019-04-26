@@ -1,26 +1,16 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[12]:
-
-
 import argparse
 import os
 import pandas as pd
 import numpy as np
 
 # Takes input and output directories as arguments
-# parser=argparse.ArgumentParser()
-# parser.add_argument('--input', default=".", help='The file path of the unzipped Grounded Emotions dataset')
-# parser.add_argument('--output', default="./data", help='The file path of the output dataset')
+parser=argparse.ArgumentParser()
+parser.add_argument('--input', default=".", help='The file path of the unzipped Grounded Emotions dataset')
+parser.add_argument('--output', default="./data", help='The file path of the output dataset')
 
-# args = parser.parse_args()
-# INPUT_PATH = args.input
-# OUTPUT_PATH = args.output
-
-
-INPUT_PATH = "./Dataset (5)/Dataset/"
-OUTPUT_PATH = "."
+args = parser.parse_args()
+INPUT_PATH = args.input
+OUTPUT_PATH = args.output
 
 def create_emo_stim_df(filename):
     f = open(INPUT_PATH + filename, "r")
@@ -65,16 +55,3 @@ emo_stim_test = emo_stim.loc[test_indices,:]
 emo_stim_train.reset_index(drop=True).to_csv(OUTPUT_PATH+"/train.tsv", sep='\t', encoding="utf-8")
 emo_stim_dev.reset_index(drop=True).to_csv(OUTPUT_PATH+"/dev.tsv", sep='\t', encoding="utf-8")
 emo_stim_test.reset_index(drop=True).to_csv(OUTPUT_PATH+"/test.tsv", sep='\t', encoding="utf-8")
-
-
-# In[13]:
-
-
-emo_stim_test.head()
-
-
-# In[ ]:
-
-
-
-
