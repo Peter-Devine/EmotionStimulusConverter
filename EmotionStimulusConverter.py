@@ -5,7 +5,7 @@ import numpy as np
 
 # Takes input and output directories as arguments
 parser=argparse.ArgumentParser()
-parser.add_argument('--input', default=".", help='The file path of the unzipped Grounded Emotions dataset')
+parser.add_argument('--input', default=".", help='The file path of the unzipped Emotion Stimulus dataset')
 parser.add_argument('--output', default="./data", help='The file path of the output dataset')
 
 args = parser.parse_args()
