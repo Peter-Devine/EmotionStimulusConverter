@@ -23,6 +23,8 @@ def create_emo_stim_df(filename):
     labels = []
 
     def tag_remover_and_labeller(line):
+        line = line.replace("\n", "")
+        
         for emotion in emotions:
             emotion_tag = "<"+emotion+">"
             emotion_closing_tag = "<\\"+emotion+">"
